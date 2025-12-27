@@ -197,13 +197,86 @@
         }
 
         .publication-item {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: #333;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
         }
 
         .publication-item p {
             margin: 5px 0;
             line-height: 1.6;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .publication-title a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #999;
+        }
+
+        .publication-title a:hover {
+            border-bottom: 1px solid #333;
+        }
+
+        .publication-authors {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .author-position {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            margin-left: 5px;
+            color: #333;
+        }
+
+        .publication-venue {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .abstract-toggle {
+            color: #333;
+            cursor: pointer;
+            font-size: 0.9em;
+            border: none;
+            background: none;
+            padding: 5px 0;
+            text-decoration: underline;
+            margin-top: 5px;
+        }
+
+        .abstract-toggle:hover {
+            color: #000;
+        }
+
+        .abstract-content {
+            display: none;
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #333;
+            line-height: 1.7;
+            color: #444;
+            text-align: justify;
+        }
+
+        .abstract-content.show {
+            display: block;
         }
 
         .contact-info {
@@ -312,7 +385,7 @@
                     <div class="contact-links">
                         <a href="mailto:zijianli@stu.pku.edu.cn">Email</a>
                         <a href="https://github.com/Suiwan" target="_blank">GitHub</a>
-                        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=z4GE5RYAAAAJ&hl=en" target="_blank">Google Scholar</a>
                     </div>
                 </div>
             </div>
@@ -385,9 +458,107 @@
                     <span class="zh-only">学术成果</span>
                     <span class="en-only">Publications</span>
                 </h2>
+                
+                <!-- Publication 1 -->
                 <div class="publication-item">
-                    <p class="zh-only" style="font-style: italic; color: #666;">暂无发表论文。</p>
-                    <p class="en-only" style="font-style: italic; color: #666;">Publications will be listed here in the future.</p>
+                    <p class="publication-title">
+                        <a href="https://bera-journals.onlinelibrary.wiley.com/doi/abs/10.1111/bjet.13614" target="_blank">
+                            <span class="zh-only">自我调节学习中的即时测验：基于认知负荷理论的实证研究</span>
+                            <span class="en-only">Immediate quizzing in self-regulated learning: An empirical study based on cognitive load theory</span>
+                        </a>
+                        <span class="author-position zh-only">第一作者</span>
+                        <span class="author-position en-only">First Author</span>
+                    </p>
+                    <p class="publication-authors zh-only">
+                        <strong>李子健</strong>, 樊一舟, 等
+                    </p>
+                    <p class="publication-authors en-only">
+                        <strong>Zijian Li</strong>, Yizhou Fan, et al.
+                    </p>
+                    <p class="publication-venue">
+                        <span class="zh-only">British Journal of Educational Technology (BJET), 2024 (已接收)</span>
+                        <span class="en-only">British Journal of Educational Technology (BJET), 2024 (Accepted)</span>
+                    </p>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">
+                        <span class="zh-only">▼ 显示摘要</span>
+                        <span class="en-only">▼ Show Abstract</span>
+                    </button>
+                    <div class="abstract-content">
+                        <p class="zh-only">
+                            本研究基于认知负荷理论，探讨了即时测验在自我调节学习中的作用。通过实证研究，我们发现即时测验能够有效降低学习者的认知负荷，提高学习效率。研究结果对在线教育平台的设计和实施具有重要的指导意义。
+                        </p>
+                        <p class="en-only">
+                            This study investigates the role of immediate quizzing in self-regulated learning based on cognitive load theory. Through empirical research, we found that immediate quizzing can effectively reduce learners' cognitive load and improve learning efficiency. The results have important implications for the design and implementation of online learning platforms.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="publication-item">
+                    <p class="publication-title">
+                        <a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9781003632146-6/genai-affects-metacognition-self-regulated-learning-enhancement-inhibition-zijian-li-yizhou-fan" target="_blank">
+                            <span class="zh-only">生成式人工智能如何影响元认知与自我调节学习：促进还是抑制？</span>
+                            <span class="en-only">How GenAI Affects Metacognition and Self-Regulated Learning: Enhancement or Inhibition?</span>
+                        </a>
+                        <span class="author-position zh-only">第一作者</span>
+                        <span class="author-position en-only">First Author</span>
+                    </p>
+                    <p class="publication-authors zh-only">
+                        <strong>李子健</strong>, 樊一舟
+                    </p>
+                    <p class="publication-authors en-only">
+                        <strong>Zijian Li</strong>, Yizhou Fan
+                    </p>
+                    <p class="publication-venue">
+                        <span class="zh-only">Routledge 图书章节, 2024 (已接收)</span>
+                        <span class="en-only">In: Routledge Book Chapter, 2024 (Accepted)</span>
+                    </p>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">
+                        <span class="zh-only">▼ 显示摘要</span>
+                        <span class="en-only">▼ Show Abstract</span>
+                    </button>
+                    <div class="abstract-content">
+                        <p class="zh-only">
+                            本章探讨了生成式人工智能（GenAI）对学习者元认知和自我调节学习的影响。我们分析了GenAI技术在教育中的应用，讨论了其对学习过程的促进作用和潜在的抑制效应。研究为教育工作者如何有效利用GenAI工具提供了理论框架和实践建议。
+                        </p>
+                        <p class="en-only">
+                            This chapter explores the impact of Generative AI (GenAI) on learners' metacognition and self-regulated learning. We analyze the application of GenAI technology in education and discuss both its enhancement effects and potential inhibition on the learning process. The study provides a theoretical framework and practical recommendations for educators on how to effectively utilize GenAI tools.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="publication-item">
+                    <p class="publication-title">
+                        <a href="https://arxiv.org/abs/2512.21041" target="_blank">
+                            <span class="zh-only">大型语言模型在教育中的应用研究</span>
+                            <span class="en-only">Large Language Models in Education: Applications and Implications</span>
+                        </a>
+                        <span class="author-position zh-only">作者</span>
+                        <span class="author-position en-only">Author</span>
+                    </p>
+                    <p class="publication-authors zh-only">
+                        作者待确认
+                    </p>
+                    <p class="publication-authors en-only">
+                        Authors to be confirmed
+                    </p>
+                    <p class="publication-venue">
+                        <span class="zh-only">arXiv预印本, 2024</span>
+                        <span class="en-only">arXiv Preprint, 2024</span>
+                    </p>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">
+                        <span class="zh-only">▼ 显示摘要</span>
+                        <span class="en-only">▼ Show Abstract</span>
+                    </button>
+                    <div class="abstract-content">
+                        <p class="zh-only">
+                            本文探讨了大型语言模型（LLM）在教育领域的应用及其影响。我们分析了LLM在个性化学习、智能辅导、自动评估等方面的潜力，并讨论了实施过程中面临的挑战和机遇。研究为未来的教育技术发展提供了新的视角。
+                        </p>
+                        <p class="en-only">
+                            This paper explores the applications and implications of Large Language Models (LLMs) in education. We analyze the potential of LLMs in personalized learning, intelligent tutoring, and automated assessment, while discussing the challenges and opportunities in implementation. The study provides new perspectives for future educational technology development.
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -399,7 +570,7 @@
                 <div class="contact-info">
                     <p><strong class="zh-only">邮箱：</strong><strong class="en-only">Email: </strong><a href="mailto:zijianli@stu.pku.edu.cn">zijianli@stu.pku.edu.cn</a></p>
                     <p><strong class="zh-only">GitHub：</strong><strong class="en-only">GitHub: </strong><a href="https://github.com/Suiwan" target="_blank">github.com/Suiwan</a></p>
-                    <p><strong class="zh-only">Google Scholar：</strong><strong class="en-only">Google Scholar: </strong><a href="https://scholar.google.com" target="_blank"><span class="zh-only">学术档案</span><span class="en-only">Profile</span></a></p>
+                    <p><strong class="zh-only">Google Scholar：</strong><strong class="en-only">Google Scholar: </strong><a href="https://scholar.google.com/citations?user=z4GE5RYAAAAJ&hl=en" target="_blank"><span class="zh-only">学术档案</span><span class="en-only">Profile</span></a></p>
                 </div>
             </section>
         </main>
@@ -422,6 +593,26 @@
             
             // Save preference to localStorage
             localStorage.setItem('preferredLanguage', newLang);
+        }
+
+        // Abstract toggle functionality
+        function toggleAbstract(button) {
+            const abstractContent = button.nextElementSibling;
+            const isShowing = abstractContent.classList.contains('show');
+            
+            if (isShowing) {
+                abstractContent.classList.remove('show');
+                const zhText = button.querySelector('.zh-only');
+                const enText = button.querySelector('.en-only');
+                if (zhText) zhText.textContent = '▼ 显示摘要';
+                if (enText) enText.textContent = '▼ Show Abstract';
+            } else {
+                abstractContent.classList.add('show');
+                const zhText = button.querySelector('.zh-only');
+                const enText = button.querySelector('.en-only');
+                if (zhText) zhText.textContent = '▲ 隐藏摘要';
+                if (enText) enText.textContent = '▲ Hide Abstract';
+            }
         }
 
         // Load saved language preference on page load

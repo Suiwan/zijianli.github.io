@@ -74,12 +74,14 @@
             height: 200px;
             border: 1px solid #333;
             background-color: #e8e8e8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: #999;
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-info {
@@ -291,7 +293,9 @@
     <div class="container">
         <header>
             <div class="profile-section">
-                <div class="profile-image">📷</div>
+                <div class="profile-image">
+                    <img src="https://www.gravatar.com/avatar/c9aded7834c76643fbb3496938adbf9f?s=320&d=identicon" alt="Zijian Li" />
+                </div>
                 <div class="profile-info">
                     <h1>
                         <span class="zh-only">李子健</span>
@@ -306,7 +310,7 @@
                     </div>
                     
                     <div class="contact-links">
-                        <a href="mailto:zijian.li@example.com">Email</a>
+                        <a href="mailto:zijianli@stu.pku.edu.cn">Email</a>
                         <a href="https://github.com/Suiwan" target="_blank">GitHub</a>
                         <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
                     </div>
@@ -395,7 +399,7 @@
                     <span class="en-only">Contact</span>
                 </h2>
                 <div class="contact-info">
-                    <p><strong class="zh-only">邮箱：</strong><strong class="en-only">Email: </strong><a href="mailto:zijian.li@example.com">zijian.li@example.com</a></p>
+                    <p><strong class="zh-only">邮箱：</strong><strong class="en-only">Email: </strong><a href="mailto:zijianli@stu.pku.edu.cn">zijianli@stu.pku.edu.cn</a></p>
                     <p><strong class="zh-only">GitHub：</strong><strong class="en-only">GitHub: </strong><a href="https://github.com/Suiwan" target="_blank">github.com/Suiwan</a></p>
                     <p><strong class="zh-only">Google Scholar：</strong><strong class="en-only">Google Scholar: </strong><a href="https://scholar.google.com" target="_blank"><span class="zh-only">学术档案</span><span class="en-only">Profile</span></a></p>
                 </div>

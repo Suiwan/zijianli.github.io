@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zijian Li - Academic Homepage">
+    <meta name="description" content="Zijian Li - Academic Homepage, Educational Technology Researcher">
     <meta name="author" content="Zijian Li">
-    <title>Zijian Li - Academic Homepage</title>
+    <meta name="keywords" content="Learning Analytics, AIED, Educational Technology, Educational Data Mining">
+    <title>李子健 (Zijian Li) - Academic Homepage</title>
     <style>
         * {
             margin: 0;
@@ -14,78 +15,114 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-            line-height: 1.6;
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.8;
             color: #333;
-            background-color: #f5f5f5;
+            background-color: #ffffff;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 960px;
             margin: 0 auto;
             background-color: #fff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Language Toggle Button */
+        #lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #666;
+            cursor: pointer;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 14px;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        #lang-toggle:hover {
+            background-color: #555;
+        }
+
+        /* Language-specific content visibility */
+        [lang="zh-CN"] .en-only {
+            display: none;
+        }
+
+        [lang="en"] .zh-only {
+            display: none;
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
+            background-color: #f8f8f8;
+            border-bottom: 2px solid #333;
+            padding: 60px 40px 40px 40px;
         }
 
         .profile-section {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
             gap: 40px;
             flex-wrap: wrap;
         }
 
         .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            background-color: #ddd;
+            width: 160px;
+            height: 200px;
+            border: 1px solid #333;
+            background-color: #e8e8e8;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
-            color: #888;
+            font-size: 48px;
+            color: #999;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
         }
 
         .profile-info h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: 400;
+            color: #000;
+            border-bottom: 1px solid #999;
+            padding-bottom: 10px;
         }
 
-        .profile-info p {
-            font-size: 1.2em;
-            opacity: 0.95;
+        .profile-info .title {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #333;
         }
 
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .profile-info .affiliation {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .social-links a {
-            color: white;
+        .contact-links {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .contact-links a {
+            color: #333;
             text-decoration: none;
-            padding: 8px 16px;
-            background-color: rgba(255,255,255,0.2);
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-bottom: 1px solid #999;
+            margin-right: 15px;
         }
 
-        .social-links a:hover {
-            background-color: rgba(255,255,255,0.3);
+        .contact-links a:hover {
+            border-bottom: 1px solid #333;
         }
 
         main {
@@ -93,93 +130,136 @@
         }
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
         section h2 {
-            color: #667eea;
-            font-size: 1.8em;
+            color: #000;
+            font-size: 1.5em;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            font-weight: 400;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
         }
 
         .section-content {
             line-height: 1.8;
-            color: #555;
-        }
-
-        .education-item, .experience-item, .publication-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #667eea;
-            border-radius: 5px;
-        }
-
-        .education-item h3, .experience-item h3, .publication-item h3 {
             color: #333;
-            font-size: 1.3em;
-            margin-bottom: 8px;
+            text-align: justify;
         }
 
-        .date {
-            color: #888;
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .education-item, .publication-item {
+            margin-bottom: 25px;
+            padding-left: 0;
+        }
+
+        .education-item h3 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .education-item .degree {
             font-style: italic;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .research-interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .research-tag {
-            background-color: #667eea;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .contact-item {
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-        }
-
-        .contact-item strong {
-            color: #667eea;
-            display: block;
+            color: #555;
             margin-bottom: 5px;
         }
 
+        .education-item .institution {
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .education-item .date {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .research-interests {
+            line-height: 2;
+        }
+
+        .research-interests ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            color: #333;
+        }
+
+        .research-interests li {
+            margin-bottom: 8px;
+        }
+
+        .publication-item {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .publication-item p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            line-height: 1.8;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #999;
+        }
+
+        .contact-info a:hover {
+            border-bottom: 1px solid #333;
+        }
+
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
             text-align: center;
-            padding: 30px 40px;
+            padding: 25px 40px;
+            color: #666;
+            font-size: 0.9em;
         }
 
         footer p {
-            opacity: 0.8;
+            margin: 5px 0;
         }
 
         @media (max-width: 768px) {
+            #lang-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
             header {
-                padding: 40px 20px;
+                padding: 50px 20px 30px 20px;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-info {
+                min-width: 0;
+                width: 100%;
             }
 
             .profile-info h1 {
-                font-size: 2em;
+                font-size: 1.6em;
             }
 
             main {
@@ -187,29 +267,48 @@
             }
 
             section h2 {
-                font-size: 1.5em;
+                font-size: 1.3em;
             }
 
-            .profile-section {
+            .contact-links {
+                display: flex;
                 flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-links a {
+                margin-right: 0;
             }
         }
     </style>
 </head>
 <body>
+    <button id="lang-toggle" onclick="toggleLanguage()">
+        <span class="zh-only">English</span>
+        <span class="en-only">中文</span>
+    </button>
+
     <div class="container">
         <header>
             <div class="profile-section">
-                <div class="profile-image">👤</div>
+                <div class="profile-image">📷</div>
                 <div class="profile-info">
-                    <h1>李子健 (Zijian Li)</h1>
-                    <p>研究员 / 博士</p>
-                    <p>计算机科学与技术</p>
-                    <div class="social-links">
-                        <a href="mailto:zijian.li@example.com">📧 邮箱</a>
-                        <a href="https://github.com/Suiwan" target="_blank">🐙 GitHub</a>
-                        <a href="https://scholar.google.com" target="_blank">🎓 Google Scholar</a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank">💼 LinkedIn</a>
+                    <h1>
+                        <span class="zh-only">李子健</span>
+                        <span class="en-only">Zijian Li</span>
+                    </h1>
+                    <p class="title zh-only">硕士研究生（2024级）</p>
+                    <p class="title en-only">Master's Student (Class of 2024)</p>
+                    
+                    <div class="affiliation">
+                        <p class="zh-only">北京大学 教育学院 教育技术系</p>
+                        <p class="en-only">Department of Educational Technology<br>Graduate School of Education<br>Peking University</p>
+                    </div>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:zijian.li@example.com">Email</a>
+                        <a href="https://github.com/Suiwan" target="_blank">GitHub</a>
+                        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
                     </div>
                 </div>
             </div>
@@ -217,122 +316,120 @@
 
         <main>
             <section id="about">
-                <h2>个人简介 / About Me</h2>
+                <h2>
+                    <span class="zh-only">个人简介</span>
+                    <span class="en-only">About Me</span>
+                </h2>
                 <div class="section-content">
-                    <p>
-                        欢迎访问我的学术主页！我是一名专注于计算机科学领域的研究者，主要研究方向包括人工智能、机器学习和数据挖掘。
-                        我对前沿技术充满热情，致力于通过创新的研究推动科技进步。
+                    <p class="zh-only">
+                        我是北京大学教育学院教育技术系2024级硕士研究生。本科毕业于华东师范大学，获教育技术学和计算机科学与技术双学士学位。我的研究兴趣主要集中在学习分析、人工智能教育应用、教育数据挖掘和个性化学习系统等领域。我致力于运用数据科学和人工智能技术改进教育实践，提升学习效果。
                     </p>
-                    <p style="margin-top: 15px;">
-                        Welcome to my academic homepage! I am a researcher specializing in computer science, with primary research 
-                        interests in artificial intelligence, machine learning, and data mining. I am passionate about cutting-edge 
-                        technology and committed to advancing science through innovative research.
+                    <p class="en-only">
+                        I am a Master's student (Class of 2024) in the Department of Educational Technology at the Graduate School of Education, Peking University. I received my dual Bachelor's degrees in Educational Technology and Computer Science and Technology from East China Normal University (2020-2024). My research interests focus on Learning Analytics, Artificial Intelligence in Education (AIED), Educational Data Mining, and Personalized Learning Systems. I am committed to applying data science and artificial intelligence technologies to improve educational practices and enhance learning outcomes.
                     </p>
                 </div>
             </section>
 
             <section id="research">
-                <h2>研究方向 / Research Interests</h2>
+                <h2>
+                    <span class="zh-only">研究方向</span>
+                    <span class="en-only">Research Interests</span>
+                </h2>
                 <div class="research-interests">
-                    <span class="research-tag">人工智能 (Artificial Intelligence)</span>
-                    <span class="research-tag">机器学习 (Machine Learning)</span>
-                    <span class="research-tag">深度学习 (Deep Learning)</span>
-                    <span class="research-tag">计算机视觉 (Computer Vision)</span>
-                    <span class="research-tag">自然语言处理 (NLP)</span>
-                    <span class="research-tag">数据挖掘 (Data Mining)</span>
+                    <ul class="zh-only">
+                        <li>学习分析 (Learning Analytics)</li>
+                        <li>人工智能教育应用 (Artificial Intelligence in Education, AIED)</li>
+                        <li>教育数据挖掘 (Educational Data Mining)</li>
+                        <li>个性化学习系统 (Personalized Learning Systems)</li>
+                    </ul>
+                    <ul class="en-only">
+                        <li>Learning Analytics</li>
+                        <li>Artificial Intelligence in Education (AIED)</li>
+                        <li>Educational Data Mining</li>
+                        <li>Personalized Learning Systems</li>
+                    </ul>
                 </div>
             </section>
 
             <section id="education">
-                <h2>教育背景 / Education</h2>
+                <h2>
+                    <span class="zh-only">教育背景</span>
+                    <span class="en-only">Education</span>
+                </h2>
+                
                 <div class="education-item">
-                    <h3>博士学位，计算机科学与技术</h3>
-                    <p class="date">2020年9月 - 2024年6月</p>
-                    <p>某某大学 计算机学院</p>
-                    <p>导师：某某教授</p>
-                    <p>研究方向：深度学习在计算机视觉中的应用</p>
+                    <h3 class="zh-only">北京大学</h3>
+                    <h3 class="en-only">Peking University</h3>
+                    <p class="degree zh-only">教育技术学，硕士</p>
+                    <p class="degree en-only">M.A. in Educational Technology</p>
+                    <p class="institution zh-only">教育学院</p>
+                    <p class="institution en-only">Graduate School of Education</p>
+                    <p class="date zh-only">2024年9月 - 至今</p>
+                    <p class="date en-only">September 2024 - Present</p>
                 </div>
+
                 <div class="education-item">
-                    <h3>硕士学位，计算机科学与技术</h3>
-                    <p class="date">2017年9月 - 2020年6月</p>
-                    <p>某某大学 计算机学院</p>
-                    <p>导师：某某教授</p>
-                </div>
-                <div class="education-item">
-                    <h3>学士学位，计算机科学与技术</h3>
-                    <p class="date">2013年9月 - 2017年6月</p>
-                    <p>某某大学 计算机学院</p>
+                    <h3 class="zh-only">华东师范大学</h3>
+                    <h3 class="en-only">East China Normal University</h3>
+                    <p class="degree zh-only">教育技术学 与 计算机科学与技术，双学士学位</p>
+                    <p class="degree en-only">B.S. in Educational Technology and Computer Science and Technology (Dual Degree)</p>
+                    <p class="date zh-only">2020年9月 - 2024年6月</p>
+                    <p class="date en-only">September 2020 - June 2024</p>
                 </div>
             </section>
 
             <section id="publications">
-                <h2>学术成果 / Publications</h2>
+                <h2>
+                    <span class="zh-only">学术成果</span>
+                    <span class="en-only">Publications</span>
+                </h2>
                 <div class="publication-item">
-                    <h3>[1] 论文标题：深度学习在图像识别中的创新应用</h3>
-                    <p class="date">2024</p>
-                    <p><strong>作者：</strong>李子健，张三，李四</p>
-                    <p><strong>发表于：</strong>International Conference on Computer Vision (ICCV 2024)</p>
-                    <p><strong>摘要：</strong>本文提出了一种基于深度学习的图像识别新方法，在多个基准数据集上取得了优异的性能...</p>
-                </div>
-                <div class="publication-item">
-                    <h3>[2] 论文标题：基于神经网络的自然语言处理技术研究</h3>
-                    <p class="date">2023</p>
-                    <p><strong>作者：</strong>李子健，王五，赵六</p>
-                    <p><strong>发表于：</strong>ACL 2023</p>
-                    <p><strong>摘要：</strong>研究了神经网络在自然语言处理中的应用，提出了创新的模型架构...</p>
-                </div>
-                <div class="publication-item">
-                    <h3>[3] 论文标题：机器学习算法优化与应用</h3>
-                    <p class="date">2022</p>
-                    <p><strong>作者：</strong>李子健，陈七</p>
-                    <p><strong>发表于：</strong>NeurIPS 2022</p>
-                    <p><strong>摘要：</strong>探讨了机器学习算法的优化方法，提高了模型的训练效率和准确性...</p>
-                </div>
-            </section>
-
-            <section id="experience">
-                <h2>工作经历 / Experience</h2>
-                <div class="experience-item">
-                    <h3>高级研究员</h3>
-                    <p class="date">2024年7月 - 至今</p>
-                    <p><strong>机构：</strong>某某研究院 人工智能实验室</p>
-                    <p><strong>职责：</strong>领导人工智能项目研发，指导研究团队，推动前沿技术落地应用</p>
-                </div>
-                <div class="experience-item">
-                    <h3>研究实习生</h3>
-                    <p class="date">2023年6月 - 2023年12月</p>
-                    <p><strong>机构：</strong>某科技公司 AI研发部</p>
-                    <p><strong>职责：</strong>参与机器学习模型开发，协助团队完成多个创新项目</p>
+                    <p class="zh-only" style="font-style: italic; color: #666;">暂无发表论文。</p>
+                    <p class="en-only" style="font-style: italic; color: #666;">Publications will be listed here in the future.</p>
                 </div>
             </section>
 
             <section id="contact">
-                <h2>联系方式 / Contact</h2>
+                <h2>
+                    <span class="zh-only">联系方式</span>
+                    <span class="en-only">Contact</span>
+                </h2>
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <strong>📧 电子邮箱 / Email:</strong>
-                        <p>zijian.li@example.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>🏢 办公地址 / Office:</strong>
-                        <p>某某大学 计算机学院 XXX室</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>🐙 GitHub:</strong>
-                        <p><a href="https://github.com/Suiwan" target="_blank">github.com/Suiwan</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>🎓 Google Scholar:</strong>
-                        <p><a href="https://scholar.google.com" target="_blank">查看学术档案</a></p>
-                    </div>
+                    <p><strong class="zh-only">邮箱：</strong><strong class="en-only">Email: </strong><a href="mailto:zijian.li@example.com">zijian.li@example.com</a></p>
+                    <p><strong class="zh-only">GitHub：</strong><strong class="en-only">GitHub: </strong><a href="https://github.com/Suiwan" target="_blank">github.com/Suiwan</a></p>
+                    <p><strong class="zh-only">Google Scholar：</strong><strong class="en-only">Google Scholar: </strong><a href="https://scholar.google.com" target="_blank"><span class="zh-only">学术档案</span><span class="en-only">Profile</span></a></p>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2024 Zijian Li. All Rights Reserved.</p>
-            <p>Last Updated: December 2024</p>
+            <p class="zh-only">&copy; 2024 李子健 版权所有</p>
+            <p class="en-only">&copy; 2024 Zijian Li. All Rights Reserved.</p>
+            <p class="zh-only">最后更新：2024年12月</p>
+            <p class="en-only">Last Updated: December 2024</p>
         </footer>
     </div>
+
+    <script>
+        // Language switching functionality
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang');
+            const newLang = currentLang === 'zh-CN' ? 'en' : 'zh-CN';
+            html.setAttribute('lang', newLang);
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferredLanguage', newLang);
+        }
+
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            // Validate savedLang before applying
+            if (savedLang && (savedLang === 'zh-CN' || savedLang === 'en')) {
+                document.documentElement.setAttribute('lang', savedLang);
+            }
+        });
+    </script>
 </body>
 </html>
